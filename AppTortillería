@@ -1,0 +1,229 @@
+import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: 'Flutter Learning',
+      theme: ThemeData(
+        primarySwatch: Colors.teal,
+      ),
+      home: MyHomePage(),
+    );
+  }
+}
+
+class MyHomePage extends StatefulWidget {
+  @override
+  _MyHomePageState createState() {
+    return _MyHomePageState();
+  }
+}
+
+class _MyHomePageState extends State<MyHomePage> {
+  @override
+  Widget build(BuildContext context) {
+    return DefaultTabController(
+      length: 3, 
+      child: Scaffold(
+        appBar: AppBar(
+          leading: const Icon(Icons.arrow_back),
+          title: const Text("Tortilleria 'EL EDU' "),
+          centerTitle: true,
+          actions: [
+            IconButton(
+              icon: const Icon(Icons.search),
+              onPressed: () {}, //OnPressed
+            ), //IconButton1
+            IconButton(
+              icon: const Icon(Icons.shopping_bag),
+              onPressed: () {}, //OnPressed
+            ), //IconButton2
+            IconButton(
+              icon: const Icon(
+                Icons.menu,
+              ),
+              onPressed: () {}, //OnPressed
+            ), //IconButton3
+          ], //Actions
+          bottom: const TabBar(
+            tabs: [
+              Tab(
+                text: "Productos",
+                icon: Icon(Icons.shopping_bag),
+              ),
+              Tab(text: "Clientes", icon: Icon(Icons.face)),
+              Tab(text: "Empleados", icon: Icon(Icons.volunteer_activism)),
+            ],
+          ),
+        actionsIconTheme:
+                  const IconThemeData(color: Colors.black, size: 40),
+              shape: const StadiumBorder(),
+              backgroundColor: Colors.amberAccent[400],
+              elevation: 8,
+              shadowColor: Colors.blueGrey,
+            ), //AppBar
+        body: const TabBarView(
+          children: <Widget>[
+            ListTile(
+                title: Text('Tortillas de Maíz Blanco'),
+                subtitle: Text('A 15 pesos el kg. y a 9 pesos el ½kg.'),
+                leading: CircleAvatar(
+                  backgroundImage: NetworkImage('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNyVSFmUpGlAvXNs1nyo7syieh7DCvty1C3Q&usqp=CAU'),
+                ),
+              ),
+              ListTile(
+                title: Text('Tortillas de Maíz Azul'),
+                subtitle: Text('A 16 pesos el kg. y a 10 el ½kg.'),
+                leading: CircleAvatar(
+                  backgroundImage: NetworkImage('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQeofOkjRdvYrxOMztccHSZoQZSvzKJbcgkug&usqp=CAU'),
+                )
+              ),
+              ListTile(
+                title: Text('Tortillas de Maíz Rojo'),
+                subtitle: Text('A 16 pesos el kg. y a 10 el ½kg.'),
+                leading: CircleAvatar(
+                  backgroundImage: NetworkImage('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvkAq2sDzJegAFM8m6lVtWV5UZ749YsM47Bw&usqp=CAU'),
+                ),
+              ),
+              ListTile(
+                title: Text('Tortillas para Tacos'),
+                subtitle: Text('A 17 pesos el kg. y a 11 pesos el ½kg.'),
+                leading: CircleAvatar(
+                  backgroundImage: NetworkImage(
+                      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2fsGtEIOmDkYNSgt2RFpb9Wnl9uCTtTvC3g&usqp=CAU'),
+                ),
+              ),
+              ListTile(
+                title: Text('Paquete se Totopos'),
+                subtitle: Text('A 20 pesos'),
+                leading: CircleAvatar(
+                  backgroundImage: NetworkImage(
+                      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGXgz3pttIVYEqUl-sLN2UZ0j0cZHGYIDukA&usqp=CAU'),
+                ),
+              ),
+              ListTile(
+                title: Text('Paquete de Tostadas'),
+                subtitle: Text('A 20 pesos'),
+                leading: CircleAvatar(
+                  backgroundImage: NetworkImage(
+                      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrP0rXKj_owSdzLKYqAFHCtUWyqYTljrJTJg&usqp=CAU'),
+                ),
+              ),
+              ListTile(
+                title: Text('Harina de Maíz MASECA'),
+                subtitle: Text('A 25 pesos el paquete'),
+                leading: CircleAvatar(
+                  backgroundImage: NetworkImage('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkaPNxDT-8mOYL1UFDuO4ekyhovHXT5TO0cQ&usqp=CAU'),
+                ),
+              ),
+
+            ListTile(
+                title: Text('Susana Gómez'),
+                subtitle: Text('MEDIO DE CONTACTO, MESSENGER: Susan_g'),
+                leading: CircleAvatar(
+                  backgroundColor: Colors.white,
+                  backgroundImage: NetworkImage('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3ALc0dR1ndYayWr3nVYE_Hh8HgN3djiw1RQ&usqp=CAU '),
+                ),
+              ),
+              ListTile(
+                title: Text('Don Julio H.'),
+                subtitle: Text('MEDIO DE CONTACTO, TELÉFONO: 656 *** 2845'),
+                leading: CircleAvatar(
+                  backgroundImage: NetworkImage(
+                      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSELvPPnjNDRQ1-ZHq7OnHyu4cnXWITA_L9gg&usqp=CAU'),
+                ),
+              ),
+              ListTile(
+                title: Text('Doña Carmen S.'),
+                subtitle: Text('MEDIO DE CONTACTO, TELÉFONO: 656 *** 6392'),
+                leading: CircleAvatar(
+                  backgroundImage: NetworkImage(
+                      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQaR5XUNOsuFWvgvG7ADNaVGOVjxw5kvih2xA&usqp=CAU'),
+                ),
+              ),
+              ListTile(
+                title: Text('Carlo Lopez'),
+                subtitle: Text('MEDIO DE CONTACTO, CORREO: Carlop_4@gmail.com'),
+                leading: CircleAvatar(
+                  backgroundImage: NetworkImage(
+                      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS9lJo4eeAixhVhCu8eVbfpz_8wTAPot6JxyQ&usqp=CAU'),
+                ),
+              ),
+              ListTile(
+                title: Text('Don Hector Mendoza'),
+                subtitle: Text('MEDIO DE CONTACTO, TELÉFONO: 656 *** 2003'),
+                leading: CircleAvatar(
+                  backgroundImage: NetworkImage(
+                      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMNpA9jo6WVY24oNm31DCUUpmLXYPcIg0OWw&usqp=CAU'),
+                ),
+              ),
+              ListTile(
+                title: Text('Nathaly Jiménez'),
+                subtitle: Text('Encargada/Jefa'),
+                leading: CircleAvatar(
+                  backgroundColor: Colors.white,
+                  backgroundImage: NetworkImage(
+                      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7CSZFk-vW1xGXwoV0UMER4zSogBWMyPI_Jw&usqp=CAU'),
+                ),
+              ),
+              ListTile(
+                title: Text('Carolina Huerta'),
+                subtitle: Text('Cajera'),
+                leading: CircleAvatar(
+                  backgroundImage: NetworkImage(
+                      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3dA3uuG9VOfaRl3Zb-cUJmckfijbzH-q3dw&usqp=CAU'),
+                ),
+              ),
+              ListTile(
+                title: Text('Eduardo Rosales'),
+                subtitle: Text('Tortillero 1°'),
+                leading: CircleAvatar(
+                  backgroundImage: NetworkImage(
+                      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRS_Gil7NUWF4r8Z5ramwe6KGmarVNGb5wB2g&usqp=CAU'),
+                ),
+              ),
+              ListTile(
+                title: Text('Omar González'),
+                subtitle: Text('Tortillero 2°'),
+                leading: CircleAvatar(
+                  backgroundImage: NetworkImage(
+                      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS1KsCIgABYYIVZvSlAhSb8j-TSJZAO5kSM0Q&usqp=CAU'),
+                ),
+              ),
+              ListTile(
+                title: Text('Leslie Martine'),
+                subtitle: Text('Tortillera 3°'),
+                leading: CircleAvatar(
+                  backgroundImage: NetworkImage(
+                      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUNR0NwjX5Ow-LCNqyWrilYabd-HKXxT-uTA&usqp=CAU'),
+                ),
+              ),
+              ListTile(
+                title: Text('Alexander Porras'),
+                subtitle: Text('Repartidor 1°'),
+                leading: CircleAvatar(
+                  backgroundImage: NetworkImage(
+                      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5rnJl3e8iCQJMcxEqZD02luMxoXB6CUPHEg&usqp=CAU'),
+                ),
+              ),
+              ListTile(
+                title: Text('Jorge Porras'),
+                subtitle: Text('Repartidor 2°'),
+                leading: CircleAvatar(
+                  backgroundImage: NetworkImage(
+                      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQasqDD49xzBxh-dOE6olz4ViK4TlHTkkFtYQ&usqp=CAU'),
+                ),
+              ),
+          ],
+        ),
+      ),
+    );
+  }
+}
